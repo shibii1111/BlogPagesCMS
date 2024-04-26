@@ -12,13 +12,11 @@
         <h1>Welcome to My Website</h1>
     </header>
     <nav>
-        <!-- Navigation links can go here -->
         <a href="#home">Home</a>
         <a href="#about">About</a>
         <a href="#services">Services</a>
     </nav>
     <main>
-        <!-- Main content goes here -->
         <section id="home">
             <h2>Home</h2>
             <p>This is the home section.</p>
@@ -31,20 +29,22 @@
             <h2>Services</h2>
             <p>This is the services section.</p>
         </section>
+        <section id="blog">
+            <h2>Blog Post</h2>
+            <div id="postContainer">Loading post...</div>
+        </section>
     </main>
     <footer>
-        <!-- Footer content goes here -->
         <p>© 2024 Your Website. All rights reserved.</p>
     </footer>
-    <script src="script.js"></script>
-</body>
     <script>
         fetch('https://raw.githubusercontent.com/shibii1111/BlogPagesCMS/main/_posts/2024-04-25-hi.md')
-  .then(response => response.text())
-  .then(text => {
-    var converter = new showdown.Converter(),
-        html = converter.makeHtml(text);
-    document.getElementById('postContainer').innerHTML = html;
-  });
+            .then(response => response.text())
+            .then(text => {
+                var converter = new showdown.Converter(),
+                    html = converter.makeHtml(text);
+                document.getElementById('postContainer').innerHTML = html;
+            });
     </script>
+</body>
 </html>
